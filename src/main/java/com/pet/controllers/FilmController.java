@@ -1,5 +1,6 @@
 package com.pet.controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.pet.documents.FilmDocument;
 import com.pet.models.InsertFilmRequest;
 import com.pet.services.FilmService;
@@ -14,7 +15,7 @@ public class FilmController {
     private final FilmService filmService;
 
     @PostMapping
-    public FilmDocument insertFilm(@RequestBody InsertFilmRequest insertFilmRequest) {
+    public FilmDocument insertFilm(@RequestBody InsertFilmRequest insertFilmRequest) throws JsonProcessingException {
         return filmService.addFilm(insertFilmRequest);
     }
 
